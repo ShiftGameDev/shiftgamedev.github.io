@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shift GameDev's Website</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #333;
+      --card-bg: #f9f9f9;
+      --card-border: #ddd;
+      --link-color: #007acc;
+    }
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --card-border: #444;
+      --link-color: #80c4ff;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    h1, h2 {
+      color: var(--text-color);
+    }
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    .asset-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .card {
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      background: var(--card-bg);
+      transition: background 0.3s, border 0.3s;
+    }
+    .card h3 {
+      margin: 0 0 8px;
+    }
+    .price {
+      font-weight: bold;
+      color: green;
+    }
+    .coming-soon {
+      color: #999;
+      font-style: italic;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text-color);
+      background-color: var(--card-bg);
+      transition: background 0.3s, color 0.3s, border 0.3s;
+    }
+    .logo {
+      width: 160px;
+      height: 160px;
+      margin-bottom: 16px;
+      border-radius: 32px;
+      object-fit: cover;
+    }
+    .preview {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .note {
+      text-align: center;
+      font-style: italic;
+      font-weight: bold;
+      color: var(--text-color);
+      margin-top: 48px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+  <img src="icon.png" alt="Shift GameDev Logo" class="logo" />
+  <h1>Shift GameDev</h1>
+  <p>Hey! I'm a solo indie developer focused on creating lightweight, easy to use Unity assets.</p>
+  <p>All my tools are designed to be clean, efficient, and helpful to developers looking to save time.</p>
+  <p><strong>Skills:</strong> Unity (C# – the language used for scripting in Unity), mobile development, clean and reusable tools.</p>
+  <p>📫 Contact: <a href="mailto:gamedev.shift@gmail.com">gamedev.shift@gmail.com</a></p>
+  <h2>🧰 My Assets</h2>
+  <div class="asset-list">
+    <div class="card">
+      <img src="joystick-image-1.png" alt="Joystick Asset Image 1" class="preview" />
+      <h3>Shift Joystick</h3>
+      <p>A lightweight and mobile friendly joystick system built for Unity's New Input System.</p>
+      <p class="coming-soon">Coming Soon — <span class="price">$5</span></p>
+    </div>
+  </div>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const btn = document.getElementById('themeBtn');
+      if (document.body.classList.contains('dark')) {
+        btn.textContent = '☀️ Light Mode';
+      } else {
+        btn.textContent = '🌙 Dark Mode';
+      }
+    }
+  </script>
+</body>
+<p class="note">In Asset Store since 2025.</p>
+</html>
